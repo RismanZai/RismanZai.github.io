@@ -19,6 +19,8 @@
     <!--AOS-->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
+    <!---->
+
     <title>My Portofolio</title>
   </head>
   <body id="home">
@@ -48,12 +50,12 @@
       </div>
     </nav>
     <!--Akhir Navbar-->
-
+    <!-- jika GSAP TIDAK MAKA GUNAKAN INI PADA CLASS : DISPLAY-3 data-aos="fade-right" data-aos-delay="50" data-aos-duration="1500" -->
     <!--Jumbotron-->
     <section class="jumbotron text-center">
       <img src="img/risman.jpg" alt="Foto Risman" class="rounded-circle img-thumbnail" />
-      <h1 class="display-3" data-aos="fade-right" data-aos-delay="50" data-aos-duration="1500">RISMAN ZAI</h1>
-      <p class="lead">Student|Programer All</p>
+      <h1 class="display-3">RISMAN ZAI</h1>
+      <p class="lead"></p>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
         <path
           fill="#ffffff"
@@ -332,10 +334,15 @@
       });
     </script>
     <!--GSAP-->
+
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/TextPlugin.min.js"></script>
     <script>
+      gsap.registerPlugin(TextPlugin);
+      gsap.to('.lead', { duration: 2, delay: 2.5, text: 'Student|Programer All' });
       gsap.from('.jumbotron img', { duration: 2, rotateY: 180, opacity: 0 });
       gsap.from('.navbar', { duration: 1.5, y: '-100%', opacity: 0, ease: 'bounce' });
+      gsap.from('.display-3', { duration: 2, x: '-150', opacity: 0, ease: 'back', delay: 1 });
     </script>
     <!--AKHIR GSAP-->
   </body>
